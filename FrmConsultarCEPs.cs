@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsultarCEP.Service;
+using System;
 using System.Windows.Forms;
 
 namespace ConsultarCEP
@@ -10,24 +11,17 @@ namespace ConsultarCEP
             InitializeComponent();
         }
         //connected service: https://apps.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente?wsdl 
-        private async void BtnConsultar_Click(object sender, EventArgs e)
+        private void BtnConsultar_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(txtCEP.Text))
             {
-                using var ws = new WsCorreios.AtendeClienteClient();
-                try
-                {
-                    var endereco = await ws.consultaCEPAsync(txtCEP.Text.Trim());
-                    txtUF.Text = endereco.@return.uf;
-                    txtCidade.Text = endereco.@return.cidade;
-                    txtBairro.Text = endereco.@return.bairro;
-                    txtRua.Text = endereco.@return.end;
-                    txtComplemento.Text = endereco.@return.complemento2;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                Endereco endereco = new();
+                endereco.ConsultaCEP(txtCEP.Text);
+                txtUF.Text = endereco.Estado;
+                txtCidade.Text = endereco.Municipio;
+                txtBairro.Text = endereco.Bairro;
+                txtRua.Text = endereco.Rua;
+                txtComplemento.Text = endereco.Complemento;
             }
             else
             {

@@ -29,9 +29,10 @@ namespace ConsultarCEP
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.txtCEP = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtComplemento = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.txtRua = new System.Windows.Forms.TextBox();
@@ -43,19 +44,9 @@ namespace ConsultarCEP
             this.txtUF = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnConsultar = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtComplemento = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "CEP:";
             // 
             // txtCEP
             // 
@@ -84,6 +75,23 @@ namespace ConsultarCEP
             this.groupBox1.Size = new System.Drawing.Size(373, 252);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
+            // 
+            // txtComplemento
+            // 
+            this.txtComplemento.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txtComplemento.Location = new System.Drawing.Point(6, 161);
+            this.txtComplemento.Name = "txtComplemento";
+            this.txtComplemento.Size = new System.Drawing.Size(356, 23);
+            this.txtComplemento.TabIndex = 12;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 143);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(87, 15);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Complemento:";
             // 
             // btnLimpar
             // 
@@ -183,22 +191,14 @@ namespace ConsultarCEP
             this.btnConsultar.UseVisualStyleBackColor = true;
             this.btnConsultar.Click += new System.EventHandler(this.BtnConsultar_Click);
             // 
-            // label6
+            // label1
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 143);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 15);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Complemento:";
-            // 
-            // txtComplemento
-            // 
-            this.txtComplemento.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.txtComplemento.Location = new System.Drawing.Point(6, 161);
-            this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(356, 23);
-            this.txtComplemento.TabIndex = 12;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(21, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(31, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "CEP:";
             // 
             // FrmConsultarCEPs
             // 
@@ -222,8 +222,6 @@ namespace ConsultarCEP
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCEP;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnLimpar;
@@ -239,6 +237,7 @@ namespace ConsultarCEP
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.TextBox txtComplemento;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label1;
     }
 }
 
